@@ -1,0 +1,22 @@
+@startuml
+
+skinparam defaultTextAlignment Center
+skinparam PackageTitleAlignment Left
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+skinparam Shadowing false
+skinparam RoundCorner 0
+
+!define ROUTEID_FONT_SIZE 12
+!define CAMEL_LOGO_SIZE 15
+
+!definelong CamelRoute(e_alias, e_label, e_routeId)
+rectangle "==e_label\n<:dromedary_camel:>\n//<size:ROUTEID_FONT_SIZE>[e_routeId]</size>//" <<camelRoute>> as e_alias
+!enddefinelong
+
+!definelong CamelRoute(e_alias, e_label, e_routeId, e_description)
+rectangle "==e_label\n<size:CAMEL_LOGO_SIZE><:dromedary_camel:></size>\n//<size:ROUTEID_FONT_SIZE>[e_routeId]</size>//\n\n e_description" <<camelRoute>> as e_alias
+!enddefinelong
+
+@enduml
