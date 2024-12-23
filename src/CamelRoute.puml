@@ -19,4 +19,12 @@ rectangle "==e_label\n<:dromedary_camel:>\n//<size:ROUTEID_FONT_SIZE>[e_routeId]
 rectangle "==e_label\n<size:CAMEL_LOGO_SIZE><:dromedary_camel:></size>\n//<size:ROUTEID_FONT_SIZE>[e_routeId]</size>//\n\n e_description" <<camelRoute>> as e_alias
 !enddefinelong
 
+!definelong CamelRouteParticipant(p_alias, p_label, p_routeId)
+participant "p_label\n<:dromedary_camel:>\n<size:ROUTEID_FONT_SIZE>[p_routeId]</size>" as p_alias <<camelRoute>>
+!enddefinelong
+
+!definelong CamelRouteParticipant(p_alias, p_label, p_routeId, p_descr)
+participant "p_label\n<:dromedary_camel:>\n<size:ROUTEID_FONT_SIZE>[p_routeId]</size>\n\n p_descr" as p_alias <<camelRoute>>
+!enddefinelong
+
 @enduml
