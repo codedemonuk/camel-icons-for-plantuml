@@ -8,6 +8,14 @@ skinparam maxMessageSize 150
 skinparam Shadowing false
 skinparam RoundCorner 0
 
+skinparam rectangle {
+    backgroundColor<<camelRoute>> CornSilk
+}
+
+skinparam participant {
+    backgroundColor<<camelRoute>> CornSilk
+}
+
 !define ROUTEID_FONT_SIZE 12
 !define CAMEL_LOGO_SIZE 15
 
