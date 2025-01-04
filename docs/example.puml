@@ -1,0 +1,20 @@
+@startuml
+
+!define CamelPuml https://raw.githubusercontent.com/codedemonuk/camel-icons-for-plantuml/0.3.0/src
+!include CamelPuml/CamelRoute.puml
+
+queue "Events" as inputQueue
+queue "More Events" as otherInputQueue
+interface "Topic" as topic
+interface "Filtered Topic" as filteredTopic
+
+CamelRoute(myRoute, "Process", "processRoute")
+CamelRoute(myOtherRoute, "Process and Filter", "processFilterRoute", "Process and filter events before publishing them")
+
+inputQueue --> myRoute
+myRoute --> topic
+
+otherInputQueue --> myOtherRoute
+myOtherRoute --> filteredTopic
+
+@enduml
